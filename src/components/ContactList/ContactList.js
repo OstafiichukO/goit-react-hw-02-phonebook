@@ -1,18 +1,22 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import Contact from './Contact';
 
-const ContactList = ({ contacts, onDelete }) => {
-  return (
-    <ul>
-      {contacts.map(({ id, name, number }) => (
-        <li key={id}>
-          {name}: {number}
-          <button type="button" onClick={onDelete}>
-            Delete
-          </button>
-        </li>
-      ))}
-    </ul>
-  );
+export default class ContactsList extends Component {
+  render() {
+    const { contacts, onClick } = this.props;
+
+    return (
+      <>
+        <ul>
+          <Contact contacts={contacts} onClick={onClick} />
+        </ul>
+      </>
+    );
+  }
+}
+
+ContactsList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
-
-export default ContactList;

@@ -17,15 +17,24 @@ class App extends Component {
     number: '',
   };
 
+  onAddContact = evt => {
+    const { name, value } = evt.target;
+    this.setState({ [name]: value });
+  };
+
   render() {
+    const filter = this.state.filter;
     return (
       <div>
         <Section title={'Phonebook'}>
-          <ContactForm />
+          <ContactForm onAddContact={this.onAddContact} />
         </Section>
         <Section title={'Contacts'}>
-          <Filter />
-          <ContactList />
+          <Filter value={filter} filterChange={this.onFilter} />
+          <ContactList
+            contacts={this.state.contacts}
+            onDelete={this.onDelete}
+          />
         </Section>
       </div>
     );

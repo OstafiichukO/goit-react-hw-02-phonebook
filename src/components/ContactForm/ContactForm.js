@@ -1,6 +1,6 @@
 // import PropTypes from 'prop-types';
 
-const ContactForm = () => {
+const ContactForm = ({ onAddContact }) => {
   return (
     <div>
       <h2>Name</h2>
@@ -21,7 +21,9 @@ const ContactForm = () => {
         required
       />
       <div>
-        <button type="button">Add contact</button>
+        <button type="button" onClick={onAddContact}>
+          Add contact
+        </button>
       </div>
     </div>
   );

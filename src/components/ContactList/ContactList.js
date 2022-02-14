@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Contact from './Contact';
+import { StyledUl } from './ContactList.styled';
 
 export default class ContactsList extends Component {
   render() {
@@ -8,9 +9,9 @@ export default class ContactsList extends Component {
 
     return (
       <>
-        <ul>
+        <StyledUl>
           <Contact contacts={contacts} onClick={onClick} />
-        </ul>
+        </StyledUl>
       </>
     );
   }

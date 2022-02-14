@@ -4,6 +4,7 @@ export const StyledSection = styled.section`
   & h3 {
     font-size: 32px;
     text-align: center;
+    margin: 20px 0 10px 0;
   }
 `;
 

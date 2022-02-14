@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { StyledButton, StyledSpan, StyledLi } from './Contact.styled';
 
 export default class Contact extends Component {
   render() {
@@ -10,12 +11,14 @@ export default class Contact extends Component {
         {contacts.map(contact => {
           const { id, name, number } = contact;
           return (
-            <li key={id}>
-              {name}: {number}
-              <button type="button" name={id} onClick={onClick}>
+            <StyledLi key={id}>
+              <StyledSpan>
+                &#9742; {name}: {number}
+              </StyledSpan>
+              <StyledButton type="button" name={id} onClick={onClick}>
                 Delete
-              </button>
-            </li>
+              </StyledButton>
+            </StyledLi>
           );
         })}
       </>
